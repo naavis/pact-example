@@ -7,7 +7,7 @@ namespace WeatherClient
         static void Main(string[] args)
         {
             var client = new ApiClient("http://localhost:5000/");
-            var weather = client.GetWeather("Helsinki");
+            var weather = client.GetWeather("Helsinki").Result;
             Console.WriteLine(weather);
         }
     }
