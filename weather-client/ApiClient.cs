@@ -23,21 +23,18 @@ namespace WeatherClient
             request.Headers.Add("Accept", "application/json");
 
             var response = await _client.SendAsync(request);
-
-            var content = await response.Content.ReadAsStringAsync();
             var status = response.StatusCode;
 
             reasonPhrase = response.ReasonPhrase; //NOTE: any Pact mock provider errors will be returned here and in the response body
 
-            request.Dispose();
-            response.Dispose();
-
             if (status == HttpStatusCode.OK)
             {
+                var content = await response.Content.ReadAsStringAsync();
                 return !String.IsNullOrEmpty(content) ? JsonConvert.DeserializeObject<Weather>(content) : null;
             }
 
             throw new Exception(reasonPhrase);
+
         }
     }
 }
