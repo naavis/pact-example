@@ -10,7 +10,7 @@ namespace WeatherClient.Test
         public IPactBuilder PactBuilder { get; private set; }
         public IMockProviderService MockProviderService { get; private set; }
 
-        public int MockServerPort { get { return 9222; } }
+        public int MockServerPort { get { return 5000; } }
         public string MockProviderServiceBaseUri { get { return String.Format("http://localhost:{0}", MockServerPort); } }
 
         public WeatherApiPact()
