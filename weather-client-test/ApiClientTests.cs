@@ -1,6 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace weather_client_test
+namespace WeatherClient.Test
 {
     [TestClass]
     public class ApiClientTests

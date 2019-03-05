@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace weather_client
+namespace WeatherClient
 {
     class Program
     {
