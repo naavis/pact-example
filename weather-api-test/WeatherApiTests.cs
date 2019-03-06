@@ -1,11 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore;
-using System.Net.Http;
-using WeatherApi;
-using System.Net;
 using PactNet;
-using System.Collections.Generic;
 
 namespace WeatherApi.Test
 {
@@ -32,7 +28,7 @@ namespace WeatherApi.Test
         }
 
         [TestMethod]
-        public void CallApi()
+        public void ApiCompliantWithPact()
         {
             var pactVerifierConfig = new PactVerifierConfig();
             var pactVerifier = new PactVerifier(pactVerifierConfig);
