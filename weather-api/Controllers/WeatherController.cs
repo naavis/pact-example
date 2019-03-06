@@ -24,7 +24,7 @@ namespace WeatherApi.Controllers
             }
             else
             {
-                return NotFound($"{location} is not a city, dummy!");
+                return NotFound(new { error = $"{location} is not a city, dummy!" });
             }
         }
     }
