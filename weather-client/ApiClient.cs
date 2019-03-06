@@ -17,15 +17,13 @@ namespace WeatherClient
 
         public async Task<Weather> GetWeather(string location)
         {
-            string reasonPhrase;
-
             var request = new HttpRequestMessage(HttpMethod.Get, "/weather/" + location);
             request.Headers.Add("Accept", "application/json");
 
             var response = await _client.SendAsync(request);
             var status = response.StatusCode;
 
-            reasonPhrase = response.ReasonPhrase; //NOTE: any Pact mock provider errors will be returned here and in the response body
+            var reasonPhrase = response.ReasonPhrase; //NOTE: any Pact mock provider errors will be returned here and in the response body
 
             if (status == HttpStatusCode.OK)
             {
