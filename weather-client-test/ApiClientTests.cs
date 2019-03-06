@@ -50,9 +50,9 @@ namespace WeatherClient.Test
                     },
                     Body = new
                     {
-                        Temperature = "-15.0",
-                        Humidity = "80.0",
-                        WindSpeed = "5.0"
+                        temperature = -15.0,
+                        humidity = 80.0,
+                        windSpeed = 5.0
                     }
                 });
 
