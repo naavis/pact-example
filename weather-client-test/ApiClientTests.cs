@@ -97,7 +97,7 @@ namespace WeatherClient.Test
 
             var api = new ApiClient(_mockServiceUri);
 
-            Assert.ThrowsExceptionAsync<Exception>(() => api.GetWeather("Holsinki"));
+            Assert.ThrowsExceptionAsync<AggregateException>(async () => await api.GetWeather("Holsinki"));
 
             _mockService.VerifyInteractions();
         }
